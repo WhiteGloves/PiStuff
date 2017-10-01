@@ -1,6 +1,10 @@
+https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt
+https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt
+https://s3.amazonaws.com/lists.disconnect.me/simple_malware.txt
+https://s3.amazonaws.com/lists.disconnect.me/simple_malvertising.txt
 https://zeustracker.abuse.ch/blocklist.php?download=baddomains
 http://sysctl.org/cameleon/hosts
-http://mirror1.malwaredomains.com/files/domains.txt
+http://mirror1.malwaredomains.com/files/justdomains
 https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling/hosts
 https://hosts-file.net/ad_servers.txt	
 https://hosts-file.net/emd.txt
