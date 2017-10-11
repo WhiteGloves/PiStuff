@@ -1,3 +1,6 @@
+https://ransomwaretracker.abuse.ch/downloads/RW_DOMBL.txt
+https://www.malwaredomainlist.com/hostslist/hosts.txt
+https://raw.githubusercontent.com/eladkarako/hosts.eladkarako.com/master/build/hosts_adblock.txt
 https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt
 https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt
 https://s3.amazonaws.com/lists.disconnect.me/simple_malware.txt
