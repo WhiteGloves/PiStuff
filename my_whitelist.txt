@@ -17,6 +17,7 @@ cdn.optimizely.com
 cert.mgt.xboxlive.com
 chaturbate.com
 cinemark.com
+client.wns.windows.com
 clients1.google.com
 clients2.google.com
 clients3.google.com
@@ -108,6 +109,8 @@ scontent.xx.fbcdn.net
 secureserver.net
 settings-win.data.microsoft.com
 skidrowreloded.com
+skydrive.wns.windows.com
+sls.update.microsoft.com
 ssl.google-analytics.com
 stream.pushbullet.com
 streamango.com
@@ -127,6 +130,7 @@ vipbox.biz
 watchseriesfree.to
 web.airdroid.com
 widget-cdn.rpxnow.com
+win10.ipv6.microsoft.com
 www.alluc.ee
 www.alluc.to
 www.amazon.com
