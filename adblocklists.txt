@@ -1,0 +1,8 @@
+https://raw.githubusercontent.com/Yhonay/antipopads/master/popads.txt
+https://fanboy.co.nz/r/fanboy-ultimate.txt
+https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/nocoin.txt
+https://easylist-downloads.adblockplus.org/antiadblockfilters.txt
+https://raw.githubusercontent.com/reek/anti-adblock-killer/master/anti-adblock-killer-filters.txt
+https://raw.githubusercontent.com/Dawsey21/Lists/master/adblock-list.txt
+https://filters.adtidy.org/windows/filters/11.txt?id=11
+https://raw.githubusercontent.com/ryanbr/fanboy-adblock/master/fake-news.txt

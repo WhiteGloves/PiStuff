@@ -5,67 +5,95 @@
 #
 #
 
-import urllib 
+import re
+import urllib2
+
+class AdblockParser:
+    URL = 'https://fanboy.co.nz/r/fanboy-ultimate.txt'
+    RAW = 'abp_ultimate.txt'
+    REX = '\|\|([a-zA-Z0-9-.]+\.[a-zA-Z]+)\^\$'
+    BAD = 'abp_domains.txt'
+    
+    def __init__(self):
+        self.fetch_list()
+        self.bad_url = set()
+        self.raw_file = None
+
+    def fetch_list(self):
+        req = urllib2.Request(AdblockParser.URL, headers={'User-Agent' : "Magic Browser"}) 
+        con = urllib2.urlopen(req)
+        with open(AdblockParser.RAW, 'w') as output:
+            output.write(con.read())
+
+    def parse_list(self):
+        regex = re.compile(AdblockParser.REX)
+        with open(AdblockParser.RAW, 'r') as blocklist:
+            for line in blocklist:
+                domain = regex.match(line)
+                if domain:
+                   self.bad_url.add(domain.group(1))
+        print "Bad Domains: {}".format(len(self.bad_url))
+
+    def save_list(self):
+        with open(AdblockParser.BAD, 'w') as output:
+            output.write('\n'.join(sorted(self.bad_url)))
 
 class BlockDNS:
-    RAW = 'raw_blocklist.txt'
-    INFO = 'blocklist_info.txt'
-    TEMP = 'tmp_raw.dat'
     WHITE = 'my_whitelist.txt'
     BLACK = 'my_blacklist.txt'
     COMPILED = 'compiled.txt'
+    URL_HEADER = {'User-Agent' : "Magic Browser"}
+    BLOCKLISTS = {'host': 'hostfiles.txt',
+                  'adblock': 'adblocklists.txt'}
     
     def __init__(self):
-        self.compiled = set()
+        self.blacklist = None
         self.whitelist = None
-        self.num_list = 0
+        self.blocklist = None
+        self.regex = {
+            'host': '(\d+\.\d+\.\d+\.\d+\s+)?([a-z0-9][a-z0-9-.]*\.[a-z]+)',
+            'adblock': '(\|\|)([a-z0-9][a-z0-9-.]*\.[a-z]+)\^\$'
+            }
+        for key, pattern in self.regex.iteritems():
+            self.regex[key] = re.compile(pattern, re.IGNORECASE)
 
-    def fetch_lists(self):
-        blocklists = None
-        www = urllib.URLopener()
-        with open(self.INFO, 'r') as f:
-            blocklists = f.read().split()
-        with open(self.RAW, 'w') as output:
-            with open(self.BLACK, 'r') as f:
-                output.write(f.read())
-            for blist in blocklists:
-                print("Downloading: {}".format(blist))
-                www.retrieve(blist, "tmp_raw.dat")
-                with open(self.TEMP, 'r') as f:
-                    for line in f:
-                        if line[0] not in "#![":
-                            output.write(line)
-        self.num_list = len(blocklists)
-        print("Downloaded {} Blocklists.".format(self.num_list))        
-
-    def build_blocklist(self):
-        self.clean_lists()
-        for filename in [self.RAW, self.BLACK]:
+    def load_lists(self):
+        self.blocklist = []
+        for key, filename in BlockDNS.BLOCKLISTS.iteritems():
             with open(filename, 'r') as f:
-                for url in f.read().split():
-                    if self.domain_check(url):
-                        self.compiled.add(url)
-        for url in self.whitelist:
-            if url in self.compiled:
-                self.compiled.remove(url)
-        print("Blacklisted Domains: {}".format(len(self.compiled)))
-
-    def fetch_hostfiles(self):
-        pass
-
-    def filter_file(self, line):
-        for line in [x for x in f if line[0] != "#"]:
-            pass
+                for line in f:
+                    self.blocklist.append((line.strip(), key))
+            
+    def parse_lists(self):
+        self.clean_lists()
+        ban = self.blacklist.add
+        print "Parsing Blocklists:"
+        i = 0
+        for url, key in self.blocklist:
+            print("{}: {}".format(i, url))
+            for line in BlockDNS.load_url(url):
+                domain = self.regex[key].match(line)
+                if domain:
+                    ban(domain.group(2))
+            i = i + 1
+        print("Blacklisted Domains: {}".format(len(self.blacklist)))
+        with open(BlockDNS.COMPILED, 'w') as outfile:
+            outfile.write("\n".join(sorted(self.blacklist)))
 
     def clean_lists(self):
-        with open(self.WHITE,'r') as f:
+        with open(BlockDNS.WHITE, 'r') as f:
             self.whitelist = set(f.read().split())
-
-    def save_blocklists(self):
-        with open(self.COMPILED, 'w') as outfile:
-            outfile.write("\n".join(sorted(self.compiled)))
-        with open(self.WHITE, 'w') as outfile:
-            outfile.write("\n".join(sorted(self.whitelist)))
+        with open(BlockDNS.WHITE, 'w') as f:
+            f.write('\n'.join(sorted(self.whitelist)))
+        with open(BlockDNS.BLACK, 'r') as f:
+            self.blacklist = set(f.read().split())
+        with open(BlockDNS.BLACK, 'w') as f:
+            f.write('\n'.join(sorted(self.blacklist)))
+    
+    @staticmethod
+    def load_url(url):
+        req = urllib2.Request(url, headers=BlockDNS.URL_HEADER)
+        return urllib2.urlopen(req)
 
     @staticmethod
     def domain_check(url):
@@ -79,9 +107,8 @@ class BlockDNS:
         
 def main():
     blocker = BlockDNS()
-    blocker.fetch_lists()
-    blocker.build_blocklist()
-    blocker.save_blocklists()
+    blocker.load_lists()
+    blocker.parse_lists()
 
 if __name__ == "__main__":
     main()
