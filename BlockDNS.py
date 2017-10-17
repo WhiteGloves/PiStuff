@@ -76,6 +76,9 @@ class BlockDNS:
                 if domain:
                     ban(domain.group(2))
             i = i + 1
+        for good in self.whitelist:
+            if good in self.blacklist:
+                self.blacklist.remove(good)
         print("Blacklisted Domains: {}".format(len(self.blacklist)))
         with open(BlockDNS.COMPILED, 'w') as outfile:
             outfile.write("\n".join(sorted(self.blacklist)))
