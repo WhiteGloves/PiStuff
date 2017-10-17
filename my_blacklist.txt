@@ -26,3 +26,5 @@ sdad.guru
 volantix.com
 insnw.net
 inscname.net
+watson.telemetry.microsoft.com
+oca.telemetry.microsoft.com

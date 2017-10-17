@@ -51,6 +51,7 @@ external-lhr8-1.xx.fbcdn.net
 external-lhr9-1.xx.fbcdn.net
 fandango.com
 fbcdn-creative-a.akamaihd.net
+fe3.delivery.mp.microsoft.com
 fonts.googleapis.com
 g.live.com
 gamefaqs.com
@@ -90,10 +91,13 @@ ow.ly
 placehold.it
 placeholdit.imgix.net
 play.google.com
+play.googleapis.com
 pricelist.skype.com
 primewire.ag
 products.office.com
+push.airdroid.com
 pushbullet.com
+putlocker9.com
 ransomwaretracker.abuse.ch
 rarbg.to
 raw.githubusercontent.com
@@ -112,6 +116,7 @@ skidrowreloded.com
 skydrive.wns.windows.com
 sls.update.microsoft.com
 ssl.google-analytics.com
+storeedgefd.dsx.mp.microsoft.com
 stream.pushbullet.com
 streamango.com
 sysctl.org
@@ -124,9 +129,11 @@ title.mgt.xboxlive.com
 trakt.tv
 tv.xfinity.com
 ui.skype.com
+update.pushbullet.com
 v10.vortex-win.data.microsoft.com
 video-stats.l.google.com
 vipbox.biz
+vortex.data.microsoft.com
 watchseriesfree.to
 web.airdroid.com
 widget-cdn.rpxnow.com
