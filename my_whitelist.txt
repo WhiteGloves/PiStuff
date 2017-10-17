@@ -1,4 +1,6 @@
 1337x.to
+adaway.org
+adblock.mahakala.is
 airdroid.com
 alluc.ee
 alluc.to
@@ -111,6 +113,7 @@ settings-win.data.microsoft.com
 skidrowreloded.com
 skydrive.wns.windows.com
 sls.update.microsoft.com
+someonewhocares.org
 ssl.google-analytics.com
 storeedgefd.dsx.mp.microsoft.com
 stream.pushbullet.com
@@ -122,6 +125,7 @@ thepiratebay.org
 thetvdb.com
 title.auth.xboxlive.com
 title.mgt.xboxlive.com
+tkqlhce.com
 trakt.tv
 tv.xfinity.com
 ui.skype.com
@@ -154,6 +158,7 @@ www.odnoklassniki.ru
 www.primewire.ag
 www.pushbullet.com
 www.skidrowreloaded.com
+www.tkqlhce.com
 www.xboxlive.com
 xbox.ipv6.microsoft.com
 xboxexperiencesprod.experimentation.xboxlive.com
