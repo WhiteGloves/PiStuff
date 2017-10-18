@@ -10,6 +10,7 @@ android.localhost
 api.pushbullet.com
 appleid.apple.com
 apps.skype.com
+arrow.com
 attestation.xboxlive.com
 bit.ly
 c.s-microsoft.com
@@ -76,6 +77,7 @@ medusalogic.com
 mirror1.malwaredomains.com
 msftncsi.com
 my.xfinity.com
+newegg.com
 notify.xboxlive.com
 ns1.dropbox.com
 ns2.dropbox.com
@@ -93,6 +95,7 @@ play.googleapis.com
 pricelist.skype.com
 primewire.ag
 products.office.com
+promotions.newegg.com
 push.airdroid.com
 pushbullet.com
 putlocker9.com
@@ -126,6 +129,7 @@ thetvdb.com
 title.auth.xboxlive.com
 title.mgt.xboxlive.com
 tkqlhce.com
+tlu.dl.delivery.mp.microsoft.com
 trakt.tv
 tv.xfinity.com
 ui.skype.com
@@ -141,6 +145,7 @@ win10.ipv6.microsoft.com
 www.alluc.ee
 www.alluc.to
 www.amazon.com
+www.arrow.com
 www.bit.ly
 www.chaturbate.com
 www.cinemark.com
@@ -154,6 +159,7 @@ www.icloud.com
 www.malwaredomainlist.com
 www.medusalogic.com
 www.msftncsi.com
+www.newegg.com
 www.odnoklassniki.ru
 www.primewire.ag
 www.pushbullet.com
