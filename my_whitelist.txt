@@ -12,12 +12,14 @@ appleid.apple.com
 apps.skype.com
 arrow.com
 attestation.xboxlive.com
+audible.com
 bit.ly
 c.s-microsoft.com
 cdn.optimizely.com
 cert.mgt.xboxlive.com
 chaturbate.com
 cinemark.com
+cj.dotomi.com
 client.wns.windows.com
 clients1.google.com
 clients2.google.com
@@ -122,6 +124,7 @@ storeedgefd.dsx.mp.microsoft.com
 stream.pushbullet.com
 streamango.com
 sysctl.org
+t1.openload.co
 test.localhost
 themoviedb.com
 thepiratebay.org
@@ -146,6 +149,7 @@ www.alluc.ee
 www.alluc.to
 www.amazon.com
 www.arrow.com
+www.audible.com
 www.bit.ly
 www.chaturbate.com
 www.cinemark.com

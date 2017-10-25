@@ -8,6 +8,7 @@ adyield.co
 c.ad-srv.co
 c.adyield.co
 cdn.comparecards.com
+cdn.justuno.com
 cdn.nmcdn.us
 cdn.optimizely.com
 cdn2.teads.tv
